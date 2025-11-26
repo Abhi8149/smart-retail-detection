@@ -403,8 +403,8 @@ def main():
     # MODEL_PATH = "yolov8n.pt"
     
     # UPDATE THESE WITH YOUR IMAGE FILENAMES
-    REFERENCE_IMAGE = "sku110k-1/test/images/test_7_jpg.rf.68e62b4db300c23cb69519286f0f9b13.jpg"  # Your reference/ideal shelf
-    CURRENT_IMAGE = "sku110k-1/test/images/test_7_jpg.rf.68e62b4db300c23cb69519286f0f9b13.jpg"     # Your current shelf to analyze
+    REFERENCE_IMAGE = "test_7_jpg.rf.68e62b4db300c23cb69519286f0f9b13.jpg"  # Your reference/ideal shelf
+    CURRENT_IMAGE = "test_7_jpg.rf.68e62b4db300c23cb69519286f0f9b13.jpg"     # Your current shelf to analyze
     OUTPUT_IMAGE = "shelf_analysis_result.jpg"
     
     # Advanced settings
@@ -432,13 +432,6 @@ def main():
             curr_image_path=CURRENT_IMAGE,
             output_path=OUTPUT_IMAGE
         )
-        
-        # Optionally, run batch analysis
-        # results = monitor.batch_analyze(
-        #     reference_image=REFERENCE_IMAGE,
-        #     current_images_dir="current_images/",
-        #     output_dir="batch_analysis_results/"
-        # )
         
     except FileNotFoundError as e:
         print(f"\n✗ Error: {e}")

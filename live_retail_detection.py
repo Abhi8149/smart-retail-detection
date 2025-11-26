@@ -85,7 +85,7 @@ class LiveRetailDetector:
         
         self.reference_items = self.detect_and_extract(ref_img)
         self.reference_loaded = True
-        print(f"✓ Reference shelf loaded with {len(self.reference_items)} items")
+        print(f"Reference shelf loaded with {len(self.reference_items)} items")
         return True
 
     def get_embedding(self, image_crop):
@@ -469,16 +469,12 @@ def main():
 ╚════════════════════════════════════════════════════════════╝
     """)
     
-    # Configuration
-    # MODEL_PATH = "runs/train/sku110k_retail_detection/weights/best.pt"
-    # Or use pretrained model if you haven't trained yet:
-    MODEL_PATH = "yolov8s.pt"  # Detects 80 common objects (bottles, cups, books, etc.)
+    MODEL_PATH = "runs/train/sku110k_retail_detection/weights/best.pt" 
     
-    REFERENCE_IMAGE = None  # Optional: path to reference shelf image
-    # REFERENCE_IMAGE = "shelf_reference.jpg"  # Uncomment to load reference
+    REFERENCE_IMAGE = None
     
-    CAMERA_ID = 0  # 0 = default webcam, 1 = external camera
-    RESOLUTION = (1280, 720)  # (width, height)
+    CAMERA_ID = 0  
+    RESOLUTION = (1280, 720)  
     
     try:
         # Initialize detector

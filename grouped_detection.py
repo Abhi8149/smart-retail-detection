@@ -259,14 +259,6 @@ class GroupedProductDetector:
         cv2.addWeighted(overlay, 0.85, image, 0.15, 0, image)
     
     def analyze_image(self, image_path, output_path=None, group_box_mode=True):
-        """
-        Analyze image and detect grouped products
-        
-        Args:
-            image_path: Path to image
-            output_path: Where to save result
-            group_box_mode: If True, draw single box per group. If False, draw individual boxes
-        """
         print(f"\n{'='*70}")
         print(f"ANALYZING: {image_path}")
         print(f"{'='*70}\n")
@@ -274,15 +266,15 @@ class GroupedProductDetector:
         # Load image
         image = cv2.imread(image_path)
         if image is None:
-            print(f"❌ Error: Could not load image from {image_path}")
+            print(f" Error: Could not load image from {image_path}")
             return
         
-        print(f"✓ Image loaded: {image.shape[1]}x{image.shape[0]} pixels")
+        print(f"Image loaded: {image.shape[1]}x{image.shape[0]} pixels")
         
         # Detect products
         print("Detecting products...")
         detections = self.detect_products(image)
-        print(f"✓ Found {len(detections)} products")
+        print(f"Found {len(detections)} products")
         
         if not detections:
             print("⚠ No products detected!")
